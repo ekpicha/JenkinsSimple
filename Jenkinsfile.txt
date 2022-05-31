@@ -1,8 +1,28 @@
+// เปิด TextEdit
+// เมนูรูปแบบ
+// เลือกทำข้อความเข้ารหัสแอสกี (RTF)
+
+// เริ่มต้น ประกาศ pipeline แล้วตามด้วย { ... }
 pipeline {
 	agent any
-
+	// stage เปรียบเสมือนกับ Flow การทำงาน ว่าจะให้ทำอะไรบ้างใน Pipeline นี้ เช่น
+	// - การ Build Code Frontend (Angular, VueJS, React, ect)
+	// - การ Test Code Frontend
+	// - การ Build Code Backend
+	// - การ Test Code Backend
+	// - การ Build Docker Image
+	// - การ Push Docker Image ไปยัง Registry
+	// - การ ออก Report
+	// - การ Deploy
 	stages{
+		// ถัดมา ในแต่ละ stage ให้กำหนด steps การทำงาน เพื่อบอก Jenkins ว่าจะให้ทำอะไร ยังไงบ้างใน stage นี้
 		stage('Init'){
+			// สามารถใส่ step การทำงานภายใน steps { ... } ได้หลาย steps เช่น
+			// - echo เป็นคำสั่งที่ใช้ในการ print (log) ข้อความต่าง ๆ ออกมาดู
+			// - sh เป็นคำสั่งที่ใช้ในการ run Linux Command เช่น
+			// -- sh 'node --version'
+			// -- sh 'cd frontend && yarn build'
+			// -- sh 'chmod 744 deploy.sh'
 			steps{
 				echo 'Init'
 				echo '******************************'
