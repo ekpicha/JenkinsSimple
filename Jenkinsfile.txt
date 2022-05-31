@@ -45,14 +45,14 @@ pipeline {
 				echo '******************************'
 			}
 		}
-		stage('Mvn Install'){	
-		}
-		stage('Mvn Test'){	
-		}
-		stage('Docker Build'){
-		}
-		stage('Docker Push'){
-		}
+		// stage('Mvn Install'){	
+		// }
+		// stage('Mvn Test'){	
+		// }
+		// stage('Docker Build'){
+		// }
+		// stage('Docker Push'){
+		// }
 		stage('Deploy'){
 			step{
 				echo 'Deploy'
