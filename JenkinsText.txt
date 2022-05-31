@@ -28,33 +28,49 @@ pipeline {
 			// -- sh 'node --version'
 			// -- sh 'cd frontend && yarn build'
 			// -- sh 'chmod 744 deploy.sh'
-			step{
+			steps{
 				echo 'Init'
 				echo '******************************'
 			}
 		}
 		stage('Yarn Install'){
-			step{
+			steps{
 				echo 'Yarn Install'
 				echo '******************************'
 			}
 		}
 		stage('Yarn Build'){
-			step{
+			steps{
 				echo 'Yarn Build'
 				echo '******************************'
 			}
 		}
-		// stage('Mvn Install'){	
-		// }
-		// stage('Mvn Test'){	
-		// }
-		// stage('Docker Build'){
-		// }
-		// stage('Docker Push'){
-		// }
+		stage('Mvn Install'){
+		    steps{
+				echo 'Mvn Install'
+				echo '******************************'
+			}
+		}
+		stage('Mvn Test'){	
+		    steps{
+				echo 'Mvn Test'
+				echo '******************************'
+			}
+		}
+		stage('Docker Build'){
+		    steps{
+				echo 'Docker Build'
+				echo '******************************'
+			}
+		}
+		stage('Docker Push'){
+		    steps{
+				echo 'Docker Push'
+				echo '******************************'
+			}
+		}
 		stage('Deploy'){
-			step{
+			steps{
 				echo 'Deploy'
 				echo '******************************'
 			}
